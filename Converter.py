@@ -1,0 +1,242 @@
+# -*- coding:utf-8 -*-
+from tkinter import*
+
+root = Tk()
+mera = IntVar()
+mera2 = IntVar()
+
+def error():
+    answ.config(text='')
+    normDig.config(text='')
+
+def transfer():
+    global ans2
+    normDig.config(text='')
+    digits = [1, 0.01, 0.001, 0.1, 1e-10, 0.025, 0.3, 0.71, 1000, 2.13, 1066.8, 0.91, 1609.34, 1852, 3.09e+16,
+              9.46e+15, 185.2, 5556, 0.000001, 0.044, 0.18]
+    digits2 = [10000, 1, 0.0001, 1000000, 100, 0.00065, 0.093, 2589988.11]
+    digits3 = [0.005, 0.015, 0.2, 0.001, 1, 3.79, 4.55, 1000, 0.016]
+    exp = 0
+    aa = a.get('1.0', END)
+    aa = int(aa)
+    imera = mera.get()
+    imera2 = mera2.get()
+    ans = None
+    if imera < 22 and imera2 < 22:
+        ans = (digits[imera-1] / digits[imera2-1])*aa
+    elif 22 <= imera < 30 and 22 <= imera2 < 30:
+        ans = (digits2[imera-22] / digits2[imera2-22])*aa
+    elif 30 <= imera < 39 and 30 <= imera2 < 39:
+        ans = (digits3[imera-30] / digits3[imera2-30])*aa
+    else:
+        answ.config(text='Error', fg='red')
+        root.after(2500, error)
+    if ans != None:
+        ans2 = ans
+        while ans >= 10:
+            exp += 1
+            ans /= 10
+        while ans < 1:
+            exp -= 1
+            ans *= 10
+        ans1 = round(ans, 3)
+        if exp > 0:
+            text1 = str(str(ans1) + 'e+' + str(exp))
+        elif exp < 0:
+            text1 = str(str(ans1) + 'e' + str(exp))
+        elif exp == 0:
+            text1 = str(ans1)
+        answ.config(text=text1, fg='black')
+
+def viewNonExp():
+    try:
+        transfer()
+        normDig.config(text=ans2, fg='black')
+    except Exception:
+        normDig.config(text='Error', fg='red')
+        root.after(2500, error)
+
+
+
+metr = Radiobutton(root, text='м', variable=mera, value=1)
+sm = Radiobutton(root, text='см', variable=mera, value=2)
+mm = Radiobutton(root, text='мм', variable=mera, value=3)
+dm = Radiobutton(root, text='дм', variable=mera, value=4)
+angs = Radiobutton(root, text='ангстрем', variable=mera, value=5)
+inch = Radiobutton(root, text='дюйм', variable=mera, value=6)
+foot = Radiobutton(root, text='фут', variable=mera, value=7)
+arshin = Radiobutton(root, text='аршин', variable=mera, value=8)
+km = Radiobutton(root, text='км', variable=mera, value=9)
+sajen = Radiobutton(root, text='сажень', variable=mera, value=10)
+versta = Radiobutton(root, text='верста', variable=mera, value=11)
+yard = Radiobutton(root, text='ярд', variable=mera, value=12)
+mile = Radiobutton(root, text='миля', variable=mera, value=13)
+mmile = Radiobutton(root, text='м.миля', variable=mera, value=14)
+parsek = Radiobutton(root, text='парсек', variable=mera, value=15)
+lyear = Radiobutton(root, text='св.год', variable=mera, value=16)
+kb = Radiobutton(root, text='кабельтов', variable=mera, value=17)
+lje = Radiobutton(root, text='лье', variable=mera, value=18)
+mkm = Radiobutton(root, text='мкм(микрон)', variable=mera, value=19)
+vershok = Radiobutton(root, text='вершок', variable=mera, value=20)
+piad = Radiobutton(root, text='пядь', variable=mera, value=21)
+#-----------------------------------------------------------------
+metr2 = Radiobutton(root, text='м', variable=mera2, value=1)
+sm2 = Radiobutton(root, text='см', variable=mera2, value=2)
+mm2 = Radiobutton(root, text='мм', variable=mera2, value=3)
+dm2 = Radiobutton(root, text='дм', variable=mera2, value=4)
+angs2 = Radiobutton(root, text='ангстрем', variable=mera2, value=5)
+inch2 = Radiobutton(root, text='дюйм', variable=mera2, value=6)
+foot2 = Radiobutton(root, text='фут', variable=mera2, value=7)
+arshin2 = Radiobutton(root, text='аршин', variable=mera2, value=8)
+km2 = Radiobutton(root, text='км', variable=mera2, value=9)
+sajen2 = Radiobutton(root, text='сажень', variable=mera2, value=10)
+versta2 = Radiobutton(root, text='верста', variable=mera2, value=11)
+yard2 = Radiobutton(root, text='ярд', variable=mera2, value=12)
+mile2 = Radiobutton(root, text='миля', variable=mera2, value=13)
+mmile2 = Radiobutton(root, text='м.миля', variable=mera2, value=14)
+parsek2 = Radiobutton(root, text='парсек', variable=mera2, value=15)
+lyear2 = Radiobutton(root, text='св.год', variable=mera2, value=16)
+kb2 = Radiobutton(root, text='кабельтов', variable=mera2, value=17)
+lje2 = Radiobutton(root, text='лье', variable=mera2, value=18)
+mkm2 = Radiobutton(root, text='мкм(микрон)', variable=mera2, value=19)
+vershok2 = Radiobutton(root, text='вершок', variable=mera2, value=20)
+piad2 = Radiobutton(root, text='пядь', variable=mera2, value=21)
+#-----------------------------------------------------------------
+gektar = Radiobutton(root, text='гектар', variable=mera, value=22)
+kvmetr = Radiobutton(root, text='м²', variable=mera, value=23)
+kvsm = Radiobutton(root, text='см²', variable=mera, value=24)
+kvkm = Radiobutton(root, text='км²', variable=mera, value=25)
+ar = Radiobutton(root, text='ар(сотка)', variable=mera, value=26)
+kvinch = Radiobutton(root, text='дюйм²', variable=mera, value=27)
+kvfoot = Radiobutton(root, text='фут²', variable=mera, value=28)
+kvmile = Radiobutton(root, text='миля²', variable=mera, value=29)
+#-----------------------------------------------------------------
+gektar2 = Radiobutton(root, text='гектар', variable=mera2, value=22)
+kvmetr2 = Radiobutton(root, text='м²', variable=mera2, value=23)
+kvsm2 = Radiobutton(root, text='см²', variable=mera2, value=24)
+kvkm2 = Radiobutton(root, text='км²', variable=mera2, value=25)
+ar2 = Radiobutton(root, text='ар(сотка)', variable=mera2, value=26)
+kvinch2 = Radiobutton(root, text='дюйм²', variable=mera2, value=27)
+kvfoot2 = Radiobutton(root, text='фут²', variable=mera2, value=28)
+kvmile2 = Radiobutton(root, text='миля²', variable=mera2, value=29)
+#-----------------------------------------------------------------
+cLojka = Radiobutton(root, text='ч.ложка', variable=mera, value=30)
+sLojka = Radiobutton(root, text='ст.ложка', variable=mera, value=31)
+stakan = Radiobutton(root, text='стакан', variable=mera, value=32)
+ml = Radiobutton(root, text='мл', variable=mera, value=33)
+litr = Radiobutton(root, text='л', variable=mera, value=34)
+amGal = Radiobutton(root, text='ам.галлон', variable=mera, value=35)
+anGal = Radiobutton(root, text='англ.галлон', variable=mera, value=36)
+cubm = Radiobutton(root, text='м³', variable=mera, value=37)
+cubinch = Radiobutton(root, text='дюйм³', variable=mera, value=38)
+#-----------------------------------------------------------------
+cLojka2 = Radiobutton(root, text='ч.ложка', variable=mera2, value=30)
+sLojka2 = Radiobutton(root, text='ст.ложка', variable=mera2, value=31)
+stakan2 = Radiobutton(root, text='стакан', variable=mera2, value=32)
+ml2 = Radiobutton(root, text='мл', variable=mera2, value=33)
+litr2 = Radiobutton(root, text='л', variable=mera2, value=34)
+amGal2 = Radiobutton(root, text='ам.галлон', variable=mera2, value=35)
+anGal2 = Radiobutton(root, text='англ.галлон', variable=mera2, value=36)
+cubm2 = Radiobutton(root, text='м³', variable=mera2, value=37)
+cubinch2 = Radiobutton(root, text='дюйм³', variable=mera2, value=38)
+#-----------------------------------------------------------------
+inter = Button(root, width=8, height=2, text='Перевести', command=transfer)
+answ = Label(root, text='')
+a = Text(root, width=6, height=1)
+a.insert(END, 1)
+result = Label(root, text='Результат:')
+LabelMera1 = Label(root, text='<- Мера 1')
+LabelMera2 = Label(root, text='Мера 2 ->')
+LabelKolvo = Label(root, text='Количество в мере 1')
+LabelVniz = Label(root, text='VVVVVVV')
+norm = Button(root, width=20, height=2, text='Показать действ. значение', command=viewNonExp)
+normDig = Label(root, text='')
+#-----------------------------------------------------------------
+metr.grid(row=1, column=0)
+sm.grid(row=2, column=0)
+mm.grid(row=3, column=0)
+dm.grid(row=4, column=0)
+angs.grid(row=5, column=0)
+inch.grid(row=6, column=0)
+foot.grid(row=7, column=0)
+arshin.grid(row=8, column=0)
+km.grid(row=9, column=0)
+sajen.grid(row=10, column=0)
+versta.grid(row=11, column=0)
+yard.grid(row=12, column=0)
+mile.grid(row=13, column=0)
+mmile.grid(row=14, column=0)
+parsek.grid(row=15, column=0)
+lyear.grid(row=16, column=0)
+kb.grid(row=17, column=0)
+lje.grid(row=18, column=0)
+mkm.grid(row=19, column=0)
+vershok.grid(row=20, column=0)
+piad.grid(row=21, column=0)
+gektar.grid(row=22, column=0)
+kvmetr.grid(row=23, column=0)
+kvsm.grid(row=24, column=0)
+kvkm.grid(row=25, column=0)
+ar.grid(row=26, column=0)
+kvinch.grid(row=27, column=0)
+kvfoot.grid(row=28, column=0)
+kvmile.grid(row=29, column=0)
+cLojka.grid(row=30, column=0)
+sLojka.grid(row=31, column=0)
+stakan.grid(row=32, column=0)
+ml.grid(row=33, column=0)
+litr.grid(row=34, column=0)
+amGal.grid(row=35, column=0)
+anGal.grid(row=36, column=0)
+cubm.grid(row=37, column=0)
+cubinch.grid(row=38, column=0)
+metr2.grid(row=1, column=2)
+sm2.grid(row=2, column=2)
+mm2.grid(row=3, column=2)
+dm2.grid(row=4, column=2)
+angs2.grid(row=5, column=2)
+inch2.grid(row=6, column=2)
+foot2.grid(row=7, column=2)
+arshin2.grid(row=8, column=2)
+km2.grid(row=9, column=2)
+sajen2.grid(row=10, column=2)
+versta2.grid(row=11, column=2)
+yard2.grid(row=12, column=2)
+mile2.grid(row=13, column=2)
+mmile2.grid(row=14, column=2)
+parsek2.grid(row=15, column=2)
+lyear2.grid(row=16, column=2)
+kb2.grid(row=17, column=2)
+lje2.grid(row=18, column=2)
+mkm2.grid(row=19, column=2)
+vershok2.grid(row=20, column=2)
+piad2.grid(row=21, column=2)
+gektar2.grid(row=22, column=2)
+kvmetr2.grid(row=23, column=2)
+kvsm2.grid(row=24, column=2)
+kvkm2.grid(row=25, column=2)
+ar2.grid(row=26, column=2)
+kvinch2.grid(row=27, column=2)
+kvfoot2.grid(row=28, column=2)
+kvmile2.grid(row=29, column=2)
+cLojka2.grid(row=30, column=2)
+sLojka2.grid(row=31, column=2)
+stakan2.grid(row=32, column=2)
+ml2.grid(row=33, column=2)
+litr2.grid(row=34, column=2)
+amGal2.grid(row=35, column=2)
+anGal2.grid(row=36, column=2)
+cubm2.grid(row=37, column=2)
+cubinch2.grid(row=38, column=2)
+LabelMera1.grid(row=15, column=1)
+LabelMera2.grid(row=16, column=1)
+LabelKolvo.grid(row=17, column=1)
+LabelVniz.grid(row=18, column=1)
+a.grid(row=19, column=1)
+inter.grid(row=20, column=1)
+result.grid(row=21, column=1)
+answ.grid(row=22, column=1)
+norm.grid(row=23, column=1)
+normDig.grid(row=24, column=1)
+
+root.mainloop()
