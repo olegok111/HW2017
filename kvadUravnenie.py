@@ -26,6 +26,9 @@ def solve():
             xdva.config(text='-')
     except Exception:
         labelError.config(text='Error')
+        diskr.config(text='')
+        xodin.config(text='')
+        xdva.config(text='')
         def nuke():
             labelError.config(text='')
         root.after(3000, nuke)
