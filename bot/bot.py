@@ -2,9 +2,9 @@
 #224746501
 import telebot
 import random
-import jjj
+import config
 
-bot = telebot.TeleBot(jjj.token)
+bot = telebot.TeleBot(config.token)
 
 @bot.message_handler(commands=['random'])
 def message_random(message):
