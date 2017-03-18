@@ -1,0 +1,7 @@
+Sat, 18 Mar 2017 12:09:39 Oleg Okoyomov @olegok2003 224746501, text:/random 34785634786 674867587456456
+Sat, 18 Mar 2017 12:13:44 Oleg Okoyomov @olegok2003 224746501, text:/stuff
+Sat, 18 Mar 2017 12:14:37 Oleg Okoyomov @olegok2003 224746501, text:/random 7 788
+Sat, 18 Mar 2017 12:15:24 Oleg Okoyomov @olegok2003 224746501, text:/random 78 78888
+fromBot: Sat, 18 Mar 2017 12:16:06 Oleg Okoyomov @olegok2003 224746501, text:7118
+Sat, 18 Mar 2017 12:18:03 Oleg Okoyomov @olegok2003 224746501, text:/send
+fromBot: Sat, 18 Mar 2017 12:18:46 Oleg Okoyomov @olegok2003 224746501, text:Введите ID после комманды /send
