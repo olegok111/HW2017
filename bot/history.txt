@@ -5,3 +5,35 @@ Sat, 18 Mar 2017 12:15:24 Oleg Okoyomov @olegok2003 224746501, text:/random 78 7
 fromBot: Sat, 18 Mar 2017 12:16:06 Oleg Okoyomov @olegok2003 224746501, text:7118
 Sat, 18 Mar 2017 12:18:03 Oleg Okoyomov @olegok2003 224746501, text:/send
 fromBot: Sat, 18 Mar 2017 12:18:46 Oleg Okoyomov @olegok2003 224746501, text:Введите ID после комманды /send
+Mon, 20 Mar 2017 13:03:57 Oleg Okoyomov @olegok2003 224746501, text:/quad 2x2+4x+4=0
+Mon, 20 Mar 2017 13:04:28 Oleg Okoyomov @olegok2003 224746501, text:/quad 2x2+4x+4=0
+Mon, 20 Mar 2017 13:05:25 Oleg Okoyomov @olegok2003 224746501, text:/quad 2x2+4x+4=0
+Mon, 20 Mar 2017 13:16:01 Oleg Okoyomov @olegok2003 224746501, text:/quad 2x2+4x+4=0
+Mon, 20 Mar 2017 13:16:42 Oleg Okoyomov @olegok2003 224746501, text:/quad 2x2+4x+4=0
+Mon, 20 Mar 2017 13:17:44 Oleg Okoyomov @olegok2003 224746501, text:/quad 2x2+4x+4=0
+Mon, 20 Mar 2017 13:18:34 Oleg Okoyomov @olegok2003 224746501, text:/quad 2x2+4x+4=0
+Mon, 20 Mar 2017 13:20:00 Oleg Okoyomov @olegok2003 224746501, text:/quad 2x2+4x+4=0
+Mon, 20 Mar 2017 13:20:31 Oleg Okoyomov @olegok2003 224746501, text:/quad 2x2+4x+4=0
+Mon, 20 Mar 2017 13:22:25 Oleg Okoyomov @olegok2003 224746501, text:/quad 2x2+4x+4=0
+Mon, 20 Mar 2017 13:23:35 Oleg Okoyomov @olegok2003 224746501, text:/quad 2x2+4x+4=0
+Mon, 20 Mar 2017 13:26:48 Oleg Okoyomov @olegok2003 224746501, text:/quad 2x2+4x+4=0
+Mon, 20 Mar 2017 13:28:59 Oleg Okoyomov @olegok2003 224746501, text:/quad 2x2+4x+4=0
+Mon, 20 Mar 2017 13:29:36 Oleg Okoyomov @olegok2003 224746501, text:/quad 2x2+4x+4=0
+Mon, 20 Mar 2017 13:51:38 Oleg Okoyomov @olegok2003 224746501, text:/quad 2x2+4x+4=0
+Mon, 20 Mar 2017 13:52:37 Oleg Okoyomov @olegok2003 224746501, text:/quad 2x2+4x+4=0
+Mon, 20 Mar 2017 13:52:59 Oleg Okoyomov @olegok2003 224746501, text:/quad 2x2+4x+4=0
+Mon, 20 Mar 2017 14:05:41 Oleg Okoyomov @olegok2003 224746501, text:/quad 2x2+4x+4=0
+fromBot: Mon, 20 Mar 2017 14:06:26 Oleg Okoyomov @olegok2003 224746501, text:Данное уравнение не имеет решений.
+Mon, 20 Mar 2017 14:07:08 Oleg Okoyomov @olegok2003 224746501, text:/quad 16x2+32x+16=0
+Mon, 20 Mar 2017 14:08:05 Oleg Okoyomov @olegok2003 224746501, text:/quad 16x2+32x+16=0
+fromBot: Mon, 20 Mar 2017 14:08:49 Oleg Okoyomov @olegok2003 224746501, text:Дискриминант = 0\n x =-1.0
+Mon, 20 Mar 2017 14:09:28 Oleg Okoyomov @olegok2003 224746501, text:/quad 16x2+32x+16=0
+fromBot: Mon, 20 Mar 2017 14:10:13 Oleg Okoyomov @olegok2003 224746501, text:Дискриминант = 0 \nx =-1.0
+Mon, 20 Mar 2017 14:09:51 Oleg Okoyomov @olegok2003 224746501, text:/quad 16x2+32x+16=0
+fromBot: Mon, 20 Mar 2017 14:10:36 Oleg Okoyomov @olegok2003 224746501, text:Дискриминант = 0 \nx = -1.0
+Mon, 20 Mar 2017 14:27:33 Oleg Okoyomov @olegok2003 224746501, text:/quad 16x2+32x+16=0
+fromBot: Mon, 20 Mar 2017 14:28:18 Oleg Okoyomov @olegok2003 224746501, text:Дискриминант = 0 \nx = -1.0
+Mon, 20 Mar 2017 14:28:26 Oleg Okoyomov @olegok2003 224746501, text:/quad 16x2+32x+16=0\\
+fromBot: Mon, 20 Mar 2017 14:29:11 Oleg Okoyomov @olegok2003 224746501, text:Дискриминант = 0 \nx = -1.0
+Mon, 20 Mar 2017 14:30:39 Oleg Okoyomov @olegok2003 224746501, text:/quad 16x2+32x+16=0
+fromBot: Mon, 20 Mar 2017 14:31:24 Oleg Okoyomov @olegok2003 224746501, text:Дискриминант = 0 \nx = -1.0
