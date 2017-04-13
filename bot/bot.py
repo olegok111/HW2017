@@ -11,18 +11,18 @@ bot = telebot.TeleBot(config.token)
 def message_history(message):
     date = time.strftime("%a, %d %b %Y %H:%M:%S", time.localtime(message.date))
     data = [date, message.from_user.first_name, message.from_user.last_name, "@" + message.from_user.username, message.chat.id,
-            'text:' + message.text]
+            "text:" + message.text]
     data = str(data)
     data = data.replace("[", "").replace("]", "").replace("',", "").replace("'", "")
-    with open('history.txt', 'a', encoding='utf8') as history:
+    with open("history.txt", "a", encoding="utf8") as history:
         print(data, file=history)
 
 def mylog(message, bot_message):
-    data = ['fromBot:', time.strftime("%a, %d %b %Y %H:%M:%S"), message.from_user.first_name, message.from_user.last_name,
-            '@' + message.from_user.username, message.chat.id, 'text:' + bot_message]
+    data = ["fromBot:", time.strftime("%a, %d %b %Y %H:%M:%S"), message.from_user.first_name, message.from_user.last_name,
+            "@" + message.from_user.username, message.chat.id, "text:" + bot_message]
     data = str(data)
     data = data.replace("[", "").replace("]", "").replace("',", "").replace("'", "")
-    with open('history.txt', 'a', encoding='utf8') as history:
+    with open("history.txt", "a", encoding="utf8") as history:
         print(data, file=history)
 
 @bot.message_handler(commands=["random"])
@@ -42,7 +42,8 @@ def message_random(message):
 @bot.message_handler(commands=["help"])
 def message_help(message):
     message_history(message)
-    helptext = "Список команд:\n\n/help - список команд\n/random (a) (b) - произвольное число от a до b\n/send (id) - отправляет сообщение пользователю с данным ID"
+    helptext = "Список команд:\n\n/help - список команд\n/random (a) (b) - произвольное число от a до b\n" \
+               "/send (id) - отправляет сообщение пользователю с данным ID\n"
     bot.send_message(message.chat.id, helptext)
     mylog(message, helptext)
 
@@ -89,24 +90,40 @@ def message_admin(message):
 def message_quad(message):
     message_history(message)
     ur = message.text
-    A = int(ur[ur.index('/quad ')+6:ur.index('x2')])
-    ur = ur[ur.index('x2')+2:]
-    B = int(ur[:ur.index('x')])
-    ur = ur[ur.index('x')+1:]
-    C = int(ur[:ur.index('=')])
-    D = B**2 - 4*A*C
-    if D < 0:
-        bot_msg1 = 'Данное уравнение не имеет решений.'
-    elif D == 0:
-        x = (-B) / (2*A)
-        bot_msg1 = 'Дискриминант = 0 \nx = ' + str(x)
-    else:
-        x1 = (-B + math.sqrt(D)) / (2*A)
-        x2 = (-B - math.sqrt(D)) / (2*A)
-        bot_msg1 = 'Дискриминант = ' + str(D) + '\nx1 = ' + str(x1) + '\nx2 = ' + str(x2)
-    bot.send_message(message.chat.id, bot_msg1)
-    mylog(message, bot_msg1)
-    
+    try:
+        A = ur[ur.index("/quad ")+6:ur.index("x2")]
+        if A == "":
+            A = 1
+        else:
+            A = int(A)
+        ur = ur[ur.index("x2")+2:]
+        B = ur[:ur.index("x")]
+        if B == "":
+            B = 1
+        else:
+            B = int(B)
+        ur = ur[ur.index("x")+1:]
+        C = ur[:ur.index("=")]
+        if C == "":
+            C = 1
+        else:
+            C = int(C)
+        D = B**2 - 4*A*C
+        if D < 0:
+            bot_msg1 = "Данное уравнение не имеет решений."
+        elif D == 0:
+            x = (-B) / (2*A)
+            bot_msg1 = "Дискриминант = 0 \nx = " + str(x)
+        else:
+            x1 = (-B + math.sqrt(D)) / (2*A)
+            x2 = (-B - math.sqrt(D)) / (2*A)
+            bot_msg1 = "Дискриминант = " + str(D) + "\nx1 = " + str(x1) + "\nx2 = " + str(x2)
+        bot.send_message(message.chat.id, bot_msg1)
+        mylog(message, bot_msg1)
+    except:
+        bot.send_message(message.chat.id, "Введите уравнение корректно.")
+        mylog(message, "Введите уравнение корректно.")
+
     """
     SUM = -B / A
     MUL = C / A
