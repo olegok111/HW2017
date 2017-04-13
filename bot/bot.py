@@ -106,7 +106,8 @@ def message_quad(message):
         bot_msg1 = 'Дискриминант = ' + str(D) + '\nx1 = ' + str(x1) + '\nx2 = ' + str(x2)
     bot.send_message(message.chat.id, bot_msg1)
     mylog(message, bot_msg1)
-
+    
+    """
     SUM = -B / A
     MUL = C / A
     l = -SUM - 1
@@ -138,6 +139,7 @@ def message_quad(message):
             ops += 1
     bot.send_message(message.chat.id, bot_msg2)
     mylog(message, bot_msg2)
+    """
 
 @bot.message_handler(content_types=["text"])
 def message_any(message):
