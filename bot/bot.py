@@ -120,43 +120,11 @@ def message_quad(message):
             bot_msg1 = "Дискриминант = " + str(D) + "\nx1 = " + str(x1) + "\nx2 = " + str(x2)
         bot.send_message(message.chat.id, bot_msg1)
         mylog(message, bot_msg1)
-    except:
+    except Exception as e:
+        print (e)
         bot.send_message(message.chat.id, "Введите уравнение корректно.")
         mylog(message, "Введите уравнение корректно.")
 
-    """
-    SUM = -B / A
-    MUL = C / A
-    l = -SUM - 1
-    r = SUM
-    if MUL == 0:
-        x1 = 0
-        x2 = SUM
-        bot_msg2 = 'Сумма корней = ', str(SUM), '\nПроизведение корней = 0 \nx1 = ' + str(x1), '\nx2 = ' + str(x2)
-    else:
-        ops = 0
-        while True:
-            x1 = (r + l) / 2
-            if x1 == 0:
-                x1 += 1
-            X2 = MUL / x1
-            x2 = SUM - x1
-            if x2 > X2:
-                r = x1
-            elif x2 < X2:
-                l = x1
-            else:
-                bot_msg2 = 'Сумма корней = ', str(SUM), '\nПроизведение корней = ' + str(MUL) + '\nx1 = ' + \
-                           str(x1), '\nx2 = ' + str(x2)
-                break
-            if ops > 1000:
-                bot_msg2 = 'Сумма корней = ', str(SUM), '\nПроизведение корней = ' + str(MUL) + '\nx1 = ' + \
-                           str(x1), '\nx2 = ' + str(x2)
-                break
-            ops += 1
-    bot.send_message(message.chat.id, bot_msg2)
-    mylog(message, bot_msg2)
-    """
 
 @bot.message_handler(content_types=["text"])
 def message_any(message):
